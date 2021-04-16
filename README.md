@@ -6,6 +6,7 @@ Covering some features with more hands on
 ## Data Binding
 ## Directives
 > ngFor, ngIf, ngStyle, ngClass
+
 >  Using renderer
   
 >  Using HostListener
@@ -15,4 +16,12 @@ Covering some features with more hands on
 >  Building structural directive
 
 ## Services
+
+> Logging Service and injecting
+
+> Data Service
+ 
+> Injecting Services into Services @Injectable()
+ 
+> Services for Cross - component communication
 
