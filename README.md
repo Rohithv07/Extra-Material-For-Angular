@@ -25,3 +25,32 @@ Covering some features with more hands on
  
 > Services for Cross - component communication
 
+## Routing
+
+> Setting and loading routes
+
+> Router Links
+
+> Navigation Paths and styling active router links
+
+> Passing parameters to Routes
+
+> Fetch Route parameters, also Reactively
+
+> Query paramaters, Fragments
+
+> Nested Routes
+
+> Redirecting and wildcards
+
+> Guards
+
+	>> canActivate
+	>> canActivateChild
+	>> Fake auth service and canDeactivate
+
+> Passing static data to route
+
+> Resolve Guard
+
+> Location startergies useHash: true
