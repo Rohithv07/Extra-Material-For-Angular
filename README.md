@@ -54,3 +54,13 @@ Covering some features with more hands on
 > Resolve Guard
 
 > Location startergies useHash: true
+
+## Observables
+
+> Undestanding angular observables
+
+> Custom observables
+
+> Data, Errors, Completion
+
+> Operators, Subject
