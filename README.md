@@ -64,3 +64,25 @@ Covering some features with more hands on
 > Data, Errors, Completion
 
 > Operators, Subject
+
+## Forms
+
+> Template Driven vs Reactive
+
+### Template Driven
+
+> Creating form
+
+> Accessing form with @ViewChild
+
+> Validation and validation error
+
+> ngModel with two way binding
+
+> Grouping form controls
+
+> Radio buttons
+
+> Resetting forms
+
+### Reactive Approach
