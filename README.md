@@ -86,3 +86,21 @@ Covering some features with more hands on
 > Resetting forms
 
 ### Reactive Approach
+
+> Creating a form
+
+> Syncing HTML and form
+
+> Submitting the form
+
+> Validation
+
+> Getting access to controls
+
+> Grouping controls
+
+> Custom validators and error codes
+
+> Async Validator
+
+> Status or value change
