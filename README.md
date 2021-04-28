@@ -104,3 +104,20 @@ Covering some features with more hands on
 > Async Validator
 
 > Status or value change
+
+## Pipes
+
+> Using pipe
+
+> Using parameters
+
+> Chaining multiple pipes
+
+> Creating custom pipe and adding parameters
+
+> Filter pipe
+
+> Pure: false Pure: true(default)
+
+> async pipe
+
