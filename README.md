@@ -121,3 +121,29 @@ Covering some features with more hands on
 
 > async pipe
 
+## HTTP Requests
+
+> Setup firebase
+
+> Post request
+
+> GET request
+
+> Types with HttpClient
+
+> Outputting Posts
+
+> Loading indicator
+
+> Using services
+
+> Delete request
+
+> Handling errors
+
+> Setting headers, query params
+
+> Different types of responses, change response body
+
+> Interceptor and Multiple Interceptor
+
