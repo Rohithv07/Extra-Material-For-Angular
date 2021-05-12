@@ -3,6 +3,8 @@ Covering some features with more hands on
 
 >>>> `npm install --save-dev @angular-devkit/build-angular`
 
+>>>> `npm install --save bootstrap@3`
+
 ## Data Binding
 ## Directives
 > ngFor, ngIf, ngStyle, ngClass
