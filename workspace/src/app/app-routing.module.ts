@@ -1,7 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { EditEmpComponent } from './edit-emp/edit-emp.component';
+import { QuantityComponentComponent } from './quantity-component/quantity-component.component';
+import { ViewEmpComponent } from './view-emp/view-emp.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: '/view-employee', pathMatch: 'full'},
+  { path: 'view-employee', component: ViewEmpComponent },
+  { path: 'edit-employee', component: EditEmpComponent },
+  { path: 'quantity-increment', component: QuantityComponentComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
