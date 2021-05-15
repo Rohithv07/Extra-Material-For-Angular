@@ -1,0 +1,18 @@
+<div>
+  <h2>Quantity Selector</h2>
+  <div class="input-group">
+    <span class="input-group-btn">
+      <button type="button" class="btn btn-danger" (click) = "onDecrement()" [disabled]="counter <= 0"
+      data-type="minus" data-field="quant[2]">
+        <span class="glyphicon glyphicon-minus"></span>
+      </button>
+      <input type="text" name="quant[2]" class="form-control input-number" value="{{this.counter}}" >
+    </span>
+    <span class="input-group-btn">
+      <button type="button" class="btn btn-success"  (click)= "onIncrement()" data-type="plus" data-field="quant[2]">
+          <span class="glyphicon glyphicon-plus"></span>
+      </button>
+  </span>
+  </div>
+
+</div>
