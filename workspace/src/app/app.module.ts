@@ -7,6 +7,8 @@ import { ViewEmpComponent } from './view-emp/view-emp.component';
 import { EditEmpComponent } from './edit-emp/edit-emp.component';
 import { HeaderComponent } from './header/header.component';
 import { QuantityComponentComponent } from './quantity-component/quantity-component.component';
+import { FormsModule } from '@angular/forms';
+import { EditEmpTemplateDrivenComponent } from './edit-emp-template-driven/edit-emp-template-driven.component';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,13 @@ import { QuantityComponentComponent } from './quantity-component/quantity-compon
     ViewEmpComponent,
     EditEmpComponent,
     HeaderComponent,
-    QuantityComponentComponent
+    QuantityComponentComponent,
+    EditEmpTemplateDrivenComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

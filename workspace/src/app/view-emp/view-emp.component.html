@@ -6,12 +6,11 @@
   <h2>Employee Details</h2>
   <div>
    <ul class="list-group">
-     <li class="list-group-item"><b>ID:</b> {{id}} </li>
-     <li class="list-group-item"><b>Name: </b>{{name}} </li>
-     <li class="list-group-item"><b>Salary:</b> {{salary | currency: 'INR'}} </li>
-     <li class="list-group-item" *ngIf="permanent"><b>Permanent:</b> Yes </li>
-     <li class="list-group-item"><b>Department Id:</b> {{departmentId}} </li>
-     <li class="list-group-item"><b>Department Name:</b> {{departmentName}} </li>
+     <li class="list-group-item"><b>ID:</b> {{employee.id}} </li>
+     <li class="list-group-item"><b>Name: </b>{{employee.name}} </li>
+     <li class="list-group-item"><b>Salary:</b> {{employee.salary | currency: 'INR'}} </li>
+     <li class="list-group-item" *ngIf="employee.permanent"><b>Permanent:</b> Yes </li>
+     <li class="list-group-item" *ngFor="let department of employee.departments"><b>Department</b> Id: {{department.departmentId}} | Department Name: {{department.departmentName}} </li>
      <li class="list-group-item"><b>Skills</b> </li>
      <table class="table">
        <thead>
@@ -21,13 +20,13 @@
          </tr>
        </thead>
        <tbody>
-         <tr *ngFor="let skill of skills; index as skillIndex;">
-           <th scope="row">{{skillIndex + 1}}</th>
-           <td> {{skill}}</td>
+         <tr *ngFor="let skill of employee.skills">
+           <th scope="row">{{skill.skillId}}</th>
+           <td> {{skill.skillName}}</td>
          </tr>
        </tbody>
      </table>
-     <li class="list-group-item"><b>Date of Birth:</b> {{dateOfBirth | date:'MMM d, y'}}</li>
+     <li class="list-group-item"><b>Date of Birth:</b> {{employee.dateOfBirth | date:'MMM d, y'}}</li>
    </ul>
   </div>
 </div>
