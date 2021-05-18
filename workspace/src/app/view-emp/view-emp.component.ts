@@ -8,18 +8,25 @@ import { EmployeeDetails } from './../employee-details-interface';
   styleUrls: ['./view-emp.component.css']
 })
 
-export class ViewEmpComponent implements OnInit, EmployeeDetails {
+export class ViewEmpComponent implements OnInit {
 
   title = 'workspace';
   favoriteMovieName = 'Interstellar';
-  id = 3;
-  name = 'John';
-  salary = 10000;
-  permanent = true;
-  departmentName = 'Payroll';
-  departmentId = 1;
-  skills = ['HTML', 'CSS', 'Javascript'];
-  dateOfBirth = new Date('12/31/2000');
+  employee: EmployeeDetails = {
+    id: 3,
+    name: 'John',
+    salary: 10000,
+    permanent: false,
+    departments: [
+      {departmentId: 1, departmentName: 'Payroll'}
+    ],
+    skills: [
+      {skillId: 1, skillName: 'HTML'},
+      {skillId: 2, skillName: 'CSS'},
+      {skillId: 3, skillName: 'Javscript'}
+    ],
+    dateOfBirth: new Date('2019/04/20')
+  };
 
 
   constructor() { }

@@ -6,7 +6,7 @@
       data-type="minus" data-field="quant[2]">
         <span class="glyphicon glyphicon-minus"></span>
       </button>
-      <input type="text" name="quant[2]" class="form-control input-number" value="{{this.counter}}" >
+      <input type="text" name="quant[2]" class="form-control input-number" [(ngModel)]="counter" >
     </span>
     <span class="input-group-btn">
       <button type="button" class="btn btn-success"  (click)= "onIncrement()" data-type="plus" data-field="quant[2]">
