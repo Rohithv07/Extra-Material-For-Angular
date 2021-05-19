@@ -26,7 +26,7 @@ export class EditEmpTemplateDrivenComponent implements OnInit {
     ],
     dateOfBirth: new Date('2019/04/20')
   };
-
+  defaultDepartment: string = "Payroll";
   constructor() { }
 
 
@@ -34,7 +34,7 @@ export class EditEmpTemplateDrivenComponent implements OnInit {
   }
 
   onSubmit(f: NgForm) {
-    console.log(f.value);
+    console.log(f);
   }
 
 }

@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <h3>Edit Employee Template Driven</h3>
   <hr>
-  <form #empForm>
+  <form #empForm="ngForm" (ngSubmit)="onSubmit(empForm.value)">
     <div class="form-control">
       <label for="Name">Name : </label>
       <input type="text" [(ngModel)]="employee.name" name="name" required minlength="2" maxlength="10"
@@ -17,25 +17,39 @@
       <div class="container-fluid">{{ employee.name }}.dirty - {{ f.dirty }}</div>
       <div class="container-fluid">{{ employee.name }}.errors.required - {{ f.errors?.required }}</div>
       <div class="container-fluid">{{ employee.name }}.errors.minlength - {{ f.errors?.minlength | json}}</div> -->
-      <br>
+      <hr>
       <div class="form-control">
         <label for="Salary">Salary : </label>
-        <input type="text" [(ngModel)]="employee.salary" name="salary"
+        <input type="text" [(ngModel)]="employee.salary" name="salary" required
         #sal="ngModel">
       </div>
-      <br>
+      <hr>
       <div class="form-control">
         <label for="permanent">Is Permanent or not?</label>
         <div>
           <label>
             <input type="radio" name="permanent" id="permanentTrue" [value]='true' [(ngModel)]="employee.permanent">Yes
           </label>
+          |
           <label>
             <input type="radio" name="permanent" id="permanentFalse" [value]='false'  [(ngModel)]="employee.permanent">No
           </label>
           </div>
       </div>
+      <hr>
+      <label for="Department">Department</label>
       <br>
+      <select name="department" id="department" class="custom-select" [(ngModel)] = "defaultDepartment">
+        <!-- <option value="">{{ defaultDepartment }}</option> -->
+        <option *ngFor="let department of employee.departments;" [ngValue]="department.departmentId" [selected] = "department.departmentId === 1">
+          {{ department.departmentName }}
+        </option>
+      </select>
+      <hr>
+      <div>
+      <button type="submit" class="btn btn-primary" [disabled]="!empForm.valid">Save</button>
+      <br>
+      </div>
       <div class="block">
         <strong>Employee Model</strong>
         <pre>{{ employee | json  }}</pre>
