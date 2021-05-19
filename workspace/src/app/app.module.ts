@@ -9,6 +9,7 @@ import { HeaderComponent } from './header/header.component';
 import { QuantityComponentComponent } from './quantity-component/quantity-component.component';
 import { FormsModule } from '@angular/forms';
 import { EditEmpTemplateDrivenComponent } from './edit-emp-template-driven/edit-emp-template-driven.component';
+import { EditEmpReactiveComponent } from './edit-emp-reactive/edit-emp-reactive.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { EditEmpTemplateDrivenComponent } from './edit-emp-template-driven/edit-
     EditEmpComponent,
     HeaderComponent,
     QuantityComponentComponent,
-    EditEmpTemplateDrivenComponent
+    EditEmpTemplateDrivenComponent,
+    EditEmpReactiveComponent
   ],
   imports: [
     BrowserModule,
