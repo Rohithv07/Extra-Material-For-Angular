@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { EmployeeDepartment } from './employee-department-class';
 
-import { EmployeeDetails } from './employee-details-interface';
+import { EmployeeDetails } from './employee-details-class';
+import { EmployeeSkill } from './employee-skill-class';
 
 
 
@@ -18,14 +20,16 @@ export class AppComponent {
     salary: 10000,
     permanent: false,
     departments: [
-      {departmentId: 1, departmentName: 'Payroll'}
+      new EmployeeDepartment(1, 'Payroll')
     ],
     skills: [
-      {skillId: 1, skillName: 'HTML'},
-      {skillId: 2, skillName: 'CSS'},
-      {skillId: 3, skillName: 'Javscript'}
+      new EmployeeSkill(1, 'HTML'),
+      new EmployeeSkill(2, 'CSS'),
+      new EmployeeSkill(3, 'Javascript')
     ],
     dateOfBirth: new Date('2019/04/20')
   };
+
+
 
 }

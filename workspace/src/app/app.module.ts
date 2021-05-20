@@ -7,9 +7,10 @@ import { ViewEmpComponent } from './view-emp/view-emp.component';
 import { EditEmpComponent } from './edit-emp/edit-emp.component';
 import { HeaderComponent } from './header/header.component';
 import { QuantityComponentComponent } from './quantity-component/quantity-component.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditEmpTemplateDrivenComponent } from './edit-emp-template-driven/edit-emp-template-driven.component';
 import { EditEmpReactiveComponent } from './edit-emp-reactive/edit-emp-reactive.component';
+import { EditEmpFormBuilderComponent } from './edit-emp-form-builder/edit-emp-form-builder.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +20,14 @@ import { EditEmpReactiveComponent } from './edit-emp-reactive/edit-emp-reactive.
     HeaderComponent,
     QuantityComponentComponent,
     EditEmpTemplateDrivenComponent,
-    EditEmpReactiveComponent
+    EditEmpReactiveComponent,
+    EditEmpFormBuilderComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

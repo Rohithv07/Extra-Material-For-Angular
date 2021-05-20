@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { EmployeeDetails } from '../employee-details-interface';
+import { EmployeeDepartment } from '../employee-department-class';
+import { EmployeeDetails } from '../employee-details-class';
+import { EmployeeSkill } from '../employee-skill-class';
 
 @Component({
   selector: 'app-edit-emp-template-driven',
@@ -15,14 +17,14 @@ export class EditEmpTemplateDrivenComponent implements OnInit {
     salary: 10000,
     permanent: false,
     departments: [
-      {departmentId: 1, departmentName: 'Payroll'},
-      {departmentId: 2, departmentName: 'Internal'},
-      {departmentId: 3, departmentName: 'HR'}
+      new EmployeeDepartment(1, 'Payroll'),
+      new EmployeeDepartment(2, 'Internal'),
+      new EmployeeDepartment(3, 'HR')
     ],
     skills: [
-      {skillId: 1, skillName: 'HTML'},
-      {skillId: 2, skillName: 'CSS'},
-      {skillId: 3, skillName: 'Javscript'}
+      new EmployeeSkill(1, 'HTML'),
+      new EmployeeSkill(2, 'CSS'),
+      new EmployeeSkill(3, 'Javascript')
     ],
     dateOfBirth: new Date('2019/04/20')
   };

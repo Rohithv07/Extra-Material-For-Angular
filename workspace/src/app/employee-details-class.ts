@@ -1,5 +1,5 @@
-import { EmployeeDepartment } from "./employee-department-interface";
-import { EmployeeSkill } from "./employee-skill-interface";
+import { EmployeeDepartment } from "./employee-department-class";
+import { EmployeeSkill } from "./employee-skill-class";
 
 export interface EmployeeDetails {
   id: number;
@@ -9,4 +9,5 @@ export interface EmployeeDetails {
   departments: EmployeeDepartment[];
   skills: EmployeeSkill[];
   dateOfBirth: Date;
+
 }
