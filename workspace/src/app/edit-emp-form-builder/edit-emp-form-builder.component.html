@@ -4,7 +4,7 @@
 <form [formGroup]="employeeDetails" (ngSubmit)=onSubmit(employeeDetails.value)>
   <div class="form-group" >
       Name: <input type="text" formControlName="employeeName" id ="name" required>
-      <div *ngIf="!employeeDetails.get('employeeName').valid && employeeDetails.get('employeeName').dirty"> Please have a look on your name</div>
+      <div *ngIf="!employeeDetails.get('employeeName')?.valid && employeeDetails.get('employeeName')?.dirty"> Please have a look on your name</div>
   </div>
   <div class="form-group">
     <h3>Department</h3>
@@ -15,10 +15,11 @@
       > {{ dept.departmentName }}</option>
     </select>
   </div>
-  <div class="form-group" formArrayName="skills">
+  <div formArrayName="skills">
     <h3>Skill</h3>
     <button (click)="addSkill()">Add new skill</button>
-    <div *ngFor="let s of skill.controls; let i = index">
+    <hr>
+    <div *ngFor="let s of skills.controls; let i = index">
       <label>Skill:
         <input type="text" [formControlName]="i">
       </label>

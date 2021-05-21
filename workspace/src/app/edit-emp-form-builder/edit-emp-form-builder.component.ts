@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  OnInit } from '@angular/core';
 import { FormArray, FormBuilder, NgForm, Validators } from '@angular/forms';
 import { EmployeeDepartment } from '../employee-department-class';
 
@@ -14,7 +14,6 @@ export class EditEmpFormBuilderComponent implements OnInit {
    * Using some default values and may be different from other component
    */
 
-  employeeDetails: any;
 
   department = [
     new EmployeeDepartment(1, 'Payroll'),
@@ -22,18 +21,18 @@ export class EditEmpFormBuilderComponent implements OnInit {
     new EmployeeDepartment(3, 'HR')
   ]
 
-  skills: any = []
+  employeeDetails = this.fb.group({
+    employeeName: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]],
+    department: [null, [Validators.required]],
+    skills: this.fb.array([
+      this.fb.control('')
+    ])
+  });
   constructor(private fb: FormBuilder) {
-    this.employeeDetails = this.fb.group({
-      employeeName: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(20)]],
-      department: [null, [Validators.required]],
-      skills: this.fb.array([
-        this.fb.control('')
-      ])
-    })
+
   }
 
-  get skill() {
+  get skills() {
     return this.employeeDetails.get('skills') as FormArray;
   }
 
