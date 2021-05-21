@@ -4,6 +4,9 @@
 <form [formGroup]="empForm" (ngSubmit)=onSubmit(empForm.value)>
   <div class="form-group" >
       Name: <input type="text" formControlName="name" id ="name" required>
+      <div *ngIf = "!empForm.get('name')?.valid && empForm.get('name')?.dirty">
+          Please have a look on your name
+      </div>
   </div>
   <div class="form-group">
     <h3>Department</h3>
