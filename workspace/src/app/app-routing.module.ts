@@ -4,6 +4,8 @@ import { EditEmpFormBuilderComponent } from './edit-emp-form-builder/edit-emp-fo
 import { EditEmpReactiveComponent } from './edit-emp-reactive/edit-emp-reactive.component';
 import { EditEmpTemplateDrivenComponent } from './edit-emp-template-driven/edit-emp-template-driven.component';
 import { EditEmpComponent } from './edit-emp/edit-emp.component';
+import { EmployeeInfoComponent } from './employee-info/employee-info.component';
+import { EmployeesComponent } from './employees/employees.component';
 import { QuantityComponentComponent } from './quantity-component/quantity-component.component';
 import { ViewEmpComponent } from './view-emp/view-emp.component';
 
@@ -14,7 +16,10 @@ const routes: Routes = [
   { path: 'quantity-increment', component: QuantityComponentComponent },
   { path: 'edit-emp-template-driven', component: EditEmpTemplateDrivenComponent },
   { path: 'edit-emp-reactive', component: EditEmpReactiveComponent },
-  { path: 'edit-emp-form-builder', component: EditEmpFormBuilderComponent }
+  { path: 'edit-emp-reactive/:id', component: EditEmpReactiveComponent },
+  { path: 'edit-emp-form-builder', component: EditEmpFormBuilderComponent },
+  { path: 'employees', component: EmployeesComponent },
+  { path: 'employee-info', component: EmployeeInfoComponent},
 
 ];
 
