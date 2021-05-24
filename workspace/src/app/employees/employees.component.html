@@ -1,0 +1,68 @@
+<div>
+  <h2>Employee List</h2>
+</div>
+
+<div class="card">
+  <h5 class="card-header">Featured</h5>
+</div>
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline">
+    <input type="search" name="search" class="form-control mr-sm-2" placeholder="Find by name" aria-label="Search"
+      [(ngModel)] = "searchKey" autocomplete="off"
+    >
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav>
+  <div *ngFor="let emp of employee | filter: searchKey; let i = index">
+  <div class="col-sm-6">
+    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+      <div class="card-header">
+        <a routerLink="/employee-info">Employee Info</a>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">{{ emp.name }}</h5>
+        <p class="card-text">{{ emp.salary | currency: 'INR' }}</p>
+        <p><a href="#" class="btn btn-primary">Edit</a></p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+<!-- <div class="col-sm-6">
+  <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+    <div class="card-header">
+      <a routerLink="/employee-info">Employee Info</a>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ employee[0].name }}</h5>
+      <p class="card-text">{{ employee[0].salary | currency: 'INR' }}</p>
+      <p><a href="#" class="btn btn-primary">Edit</a></p>
+    </div>
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+    <div class="card-header">
+      <a href="">Employee Info</a>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ employee[1].name }}</h5>
+      <p class="card-text">{{ employee[1].salary | currency: 'INR' }}</p>
+      <p><a href="#" class="btn btn-primary">Edit</a></p>
+    </div>
+  </div>
+</div>
+<div class="col-sm-6">
+  <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+    <div class="card-header">
+      <a href="">Employee Info</a>
+    </div>
+    <div class="card-body">
+      <h5 class="card-title">{{ employee[2].name }}</h5>
+      <p class="card-text">{{ employee[2].salary | currency: 'INR' }}</p>
+      <p><a href="#" class="btn btn-primary">Edit</a></p>
+    </div>
+  </div>
+</div> -->
+
+

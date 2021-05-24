@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { EmployeeDepartment } from './employee-department-class';
 
-import { EmployeeDetails } from './employee-details-class';
+import { EmployeeDetails } from './employee-details-interface';
 import { EmployeeSkill } from './employee-skill-class';
 
 
