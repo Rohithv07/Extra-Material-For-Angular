@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { EmployeeDetails } from '../employee-details-interface';
+import { EmployeeService } from '../employee.service';
 
 @Component({
   selector: 'app-edit-emp-reactive',
@@ -31,7 +32,7 @@ export class EditEmpReactiveComponent implements OnInit {
   // departments = new FormControl(this.employee.departments);
 
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private employeeService: EmployeeService) { }
 
   ngOnInit(): void {
     this.empForm = new FormGroup({
@@ -45,8 +46,9 @@ export class EditEmpReactiveComponent implements OnInit {
       ])
     });
 
-    const employeeId = this.route.snapshot.paramMap.get('id');
+    let employeeId = this.route.snapshot.paramMap.get('id');
     console.log(employeeId);
+    console.log(this.employeeService.getEmployee(employeeId));
   }
 
   get names() {

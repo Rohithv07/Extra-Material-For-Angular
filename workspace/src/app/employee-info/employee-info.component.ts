@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { EmployeeDepartment } from '../employee-department-class';
 import { EmployeeDetails } from '../employee-details-interface';
 import { EmployeeSkill } from '../employee-skill-class';
@@ -9,7 +10,7 @@ import { EmployeeSkill } from '../employee-skill-class';
   templateUrl: './employee-info.component.html',
   styleUrls: ['./employee-info.component.css']
 })
-export class EmployeeInfoComponent implements OnInit {
+export class EmployeeInfoComponent implements OnInit, OnDestroy {
   @Input()
   employee: EmployeeDetails =
     {
@@ -28,13 +29,19 @@ export class EmployeeInfoComponent implements OnInit {
       dateOfBirth: new Date('2019/04/20')
     };
 
+    subscription! : Subscription;
+
 
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe(params => {
-      this.employee.name = params['name'];
-    })
+    this.subscription = this.route.queryParams.subscribe(params => {
+      this.employee.name = params['id'];
+    });
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 
 }

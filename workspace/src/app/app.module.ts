@@ -14,6 +14,7 @@ import { EditEmpFormBuilderComponent } from './edit-emp-form-builder/edit-emp-fo
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeInfoComponent } from './employee-info/employee-info.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     EditEmpFormBuilderComponent,
     EmployeesComponent,
     EmployeeInfoComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
