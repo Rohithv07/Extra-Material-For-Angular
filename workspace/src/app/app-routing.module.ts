@@ -9,6 +9,7 @@ import { EmployeeInfoComponent } from './employee-info/employee-info.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { LoginComponent } from './login/login.component';
 import { QuantityComponentComponent } from './quantity-component/quantity-component.component';
+import { UserComponent } from './user/user.component';
 import { ViewEmpComponent } from './view-emp/view-emp.component';
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'employees', component: EmployeesComponent },
   { path: 'employee-info', component: EmployeeInfoComponent},
   { path: 'login', component: LoginComponent },
+  { path: 'user', component: UserComponent },
   { path: '**', redirectTo: '/login'},
 
 ];
