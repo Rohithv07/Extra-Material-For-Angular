@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,6 +16,7 @@ import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeInfoComponent } from './employee-info/employee-info.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { LoginComponent } from './login/login.component';
+import { UserComponent } from './user/user.component';
 
 
 @NgModule({
@@ -30,13 +32,15 @@ import { LoginComponent } from './login/login.component';
     EmployeesComponent,
     EmployeeInfoComponent,
     LoginComponent,
+    UserComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    Ng2SearchPipeModule
+    Ng2SearchPipeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,15 @@
+<div><h3>User Details</h3></div>
+
+<div *ngFor="let u of user">
+  <div class="card-deck">
+    <div class="card">
+      <!-- <img [src]="u.avatar" alt="u.name" class="card-img-top"> -->
+      <div class="card-body">
+        <h5 class="card-title">{{ u.id }}</h5>
+        <p class="card-text">{{ u.firstName }}</p>
+        <p class="card-text">{{ u.lastName }}</p>
+        <p class="card-text"><small class="text-muted">{{u.email}}</small></p>
+      </div>
+    </div>
+  </div>
+</div>
