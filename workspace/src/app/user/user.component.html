@@ -1,14 +1,31 @@
 <div><h3>User Details</h3></div>
+<hr>
+<div class="btn-group" role="button group" aria-label="Button group">
+  <button class="btn btn-primary" (click) = "addUser()">Click to add new user</button>
+  <button class="btn btn-primary" (click) = "updateUser()">Click to Update Avatar of User</button>
+  <button class="btn btn-primary" (click) = "deleteUser()">Click to Delete User</button>
+</div>
+<!-- <span>
+  <button class="btn btn-primary" (click) = "addUser()">Click to add new user</button>
+</div>
+<hr>
+<div>
+  <button class="btn btn-primary" (click) = "updateUser()">Click to Update Avatar of User</button>
+</div>
+<hr>
+<div>
+  <button class="btn btn-primary" (click) = "deleteUser()">Click to Delete User</button>
+</div> -->
 
-<div *ngFor="let u of user">
-  <div class="card-deck">
-    <div class="card">
-      <!-- <img [src]="u.avatar" alt="u.name" class="card-img-top"> -->
-      <div class="card-body">
-        <h5 class="card-title">{{ u.id }}</h5>
-        <p class="card-text">{{ u.firstName }}</p>
-        <p class="card-text">{{ u.lastName }}</p>
-        <p class="card-text"><small class="text-muted">{{u.email}}</small></p>
+<div class="row">
+  <div *ngFor="let u of user">
+    <div class="card-deck">
+      <div class="card">
+        <img [src]="u.avatar" alt="Avatar" class="card-img-top">
+        <div class="card-body">
+          <h5 class="card-title">{{ u.id }}</h5>
+          <p class="card-text"><small class="text-muted">{{u.email}}</small></p>
+        </div>
       </div>
     </div>
   </div>
