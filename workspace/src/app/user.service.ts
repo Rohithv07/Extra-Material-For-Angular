@@ -14,23 +14,22 @@ export class UserService {
 
   private userUrl = 'https://reqres.in/api/users?page=2';
 
+  // getAllUsers(): Observable<Array<UserInterface>> {
+  //   return this.http.get<JsonResult>(this.userUrl)
+  //   .pipe(
+  //     map(response => response.data),
+  //     retry(5),
+  //     catchError(this.handleError)
+  //   );
+  //  }
 
-  getAllUsers(): Observable<JsonResult> {
-   return this.http.get<JsonResult>(this.userUrl)
-   .pipe(
-     retry(5),
-     catchError(this.handleError)
-   );
+
+   getAllUsers(): Observable<JsonResult> {
+    return this.http.get<JsonResult>(this.userUrl).pipe(
+      retry(5),
+      catchError(this.handleError)
+    );
   }
-
-  // private handleError<T>(operation = 'operation', result?:T) {
-  //   return (error: any): Observable<T> => {
-  //     console.error(error);
-  //     console.log(`${operation} failed: ${error.message}`);
-  //     return of(result as T);
-  //   }
-  // }
-
   createUser(user: UserInterface) {
     return this.http.post<UserInterface>(this.userUrl, user)
     .pipe(
