@@ -1,0 +1,75 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <!-- Add a Form with the following Inputs (and Validators)
+           1) Mail address (should not be empty and should be an email address)
+           2) A Dropdown which allows the user to select from three different Subscriptions ("Basic", "Advanced", "Pro")
+              Set "Advanced" as Default
+           3) A Password field (should not be empty)
+           4) A Submit Button
+
+           Display a warning message if the Form is invalid AND was touched. Display a warning message below each input if it's invalid.
+
+           Upon submitting the form, you should simply print the Value of the Form to the Console.
+           Optionally, display it in your template.
+      -->
+      <form #templateDrivenForm="ngForm" (ngSubmit)="onSubmit(templateDrivenForm)" novalidate> <!--no validate to disable browser validation which interfere with angular validation-->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="text" id="email" class="form-control" required email name="email" 
+        #emailId="ngModel" ngModel>
+        <div class="alert alert-danger" role="alert" *ngIf="!emailId.valid && (emailId.dirty || emailId.touched)">
+          <div class="alert alert-danger" role="alert" *ngIf="emailId.errors.required">
+            Email is required
+          </div>
+          <div class="alert alert-danger" role="alert" *ngIf="emailId.errors.email">
+            Email is not valid, please enter a valid email
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" class="form-control" required name="password" 
+        #password="ngModel" ngModel minlength="6">
+        <div class="alert alert-danger" role="alert" *ngIf="!password.valid && (password.dirty || password.touched)">
+          <div class="alert alert-danger" role="alert" *ngIf="password.errors.required">
+            Password is required
+          </div>
+          <div class="alert alert-danger" role="alert" *ngIf="password.errors.minlength">
+            Password is having a minimum length of {{ password.errors.minlength.requiredLength }}
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="user">Subscriber options</label>
+        <select name="user" id="user" class="form-control" required #userOption="ngModel" [(ngModel)]="templateForm.subOption">
+          <option *ngFor="let option of subOptions" [value]="option"> {{ option }}</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!templateDrivenForm.valid">Submit the form</button>
+      </form>
+      <br>  
+      <div class="container-fluid">
+        <pre>Value: {{ templateDrivenForm.value | json}}</pre>
+        <pre>Valid: {{ templateDrivenForm.valid }}</pre>
+        <pre>Touched: {{ templateDrivenForm.touched }}</pre>
+        <pre>Submitted: {{ templateDrivenForm.submitted }}</pre>
+      </div>
+      <div class="container-fluid">
+        <pre>Email Value: {{ emailId.value | json}}</pre>
+        <pre>Email Valid: {{ emailId.valid }}</pre>
+        <pre>Email Touched: {{ emailId.touched }}</pre>
+      </div>
+      <div class="container-fluid">
+        <pre>Password Value: {{ password.value | json}}</pre>
+        <pre>Password Valid: {{ password.valid }}</pre>
+        <pre>Password Touched: {{ password.touched }}</pre>
+      </div>
+      <div class="container-fluid">
+        <pre>User option Value: {{ userOption.value | json}}</pre>
+        <pre>User option Valid: {{ userOption.valid }}</pre>
+        <pre>User option Touched: {{ userOption.touched }}</pre>
+      </div>
+    </div>
+  </div>
+</div>
