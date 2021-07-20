@@ -1,3 +1,6 @@
-.my-container{
-    background-color: white;
+.my-container {
+    padding-top: 20px;
+}
+.slide {
+    margin-left: 20px;
 }

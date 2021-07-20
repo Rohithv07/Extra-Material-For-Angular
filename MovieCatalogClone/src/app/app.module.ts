@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,7 +18,8 @@ import { MovieCatalogComponent } from './movie-catalog/movie-catalog.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    SlickCarouselModule
   ],
   providers: [],
   bootstrap: [AppComponent]
