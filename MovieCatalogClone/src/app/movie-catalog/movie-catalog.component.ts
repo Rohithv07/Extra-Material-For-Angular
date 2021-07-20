@@ -8,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class MovieCatalogComponent implements OnInit {
 
 
-  slideConfig = {"slidesToShow": 1, "slidesToScroll": 1, "autoplay": true, "autoplaySpeed": 2000};
+  slideConfig = {"slidesToShow": 1, 
+  "slidesToScroll": 1, 
+  "autoplay": true, 
+  "autoplaySpeed": 2000,
+  "nextArrow": "<div class='nav-btn next-slide'></div>",
+  "prevArrow": "<div class='nav-btn prev-slide'></div>"};
 
   slides = [
     {img:'../assets/images/1.png'},

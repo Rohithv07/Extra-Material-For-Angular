@@ -1,6 +1,20 @@
-.my-container {
+.container {
     padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
 }
-.slide {
-    margin-left: 20px;
-}
+
+.nav-btn {
+    height: 47px;
+    position: absolute;
+    width: 26px;
+    cursor: pointer;
+    top: 100px !important;
+    background-color: blanchedalmond;
+  }
+
+  .slick-slider {
+    width: 90%;
+    margin: auto;
+    background: #000;
+  }
