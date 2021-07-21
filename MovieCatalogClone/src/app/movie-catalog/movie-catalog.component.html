@@ -1,10 +1,24 @@
-<div class="container">
-<ngx-slick-carousel class="carousel" 
+<div class="float-container">
+    <div class="float-child1">
+        <ngx-slick-carousel class="carousel" 
                     #slickModal="slick-carousel" 
                     [config]="slideConfig" >
                     <div ngxSlickItem *ngFor="let slide of slides" class="slide">
-                        <img src="{{ slide.img }}" alt="" width="50%">
+                        <a href="#"><img src="{{ slide.img }}" alt="" width="90%" class="slideshow"></a>
                     </div>
-</ngx-slick-carousel>
+        </ngx-slick-carousel>
+    </div>
+    <div class="float-child2">
+        <h2 class="next">Up Next</h2>
+        <div class="container1">
+            <span><img src="https://wallpaperaccess.com/full/1107715.jpg" class="img-fluid" alt="..." width="40%" height="60%"><b class="film">'The Godfather'</b></span>
+        </div>
+        <div class="container2">
+            <span><img src="https://c4.wallpaperflare.com/wallpaper/624/458/452/interstellar-wallpaper-preview.jpg" class="img-fluid" alt="..." width="40%" height="60%"><b class="film">'Interstellar'</b></span>
+        </div>
+        <div class="container3">
+            <span><img src="https://wallpapercave.com/wp/kr87rMu.jpg" class="img-fluid" alt="..." width="40%" height="60%"><b class="film">'The Dark Knight'</b></span>
+        </div>
+    </div>
 </div>
     
