@@ -1,7 +1,7 @@
 export interface CurrencyExchange {
     id: number;
-    from: any;
-    to: any;
-    conversionMultiple: any;
-    environment: any;
+    from: string;
+    to: string;
+    conversionMultiple: bigint;
+    environment: string;
 }
