@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry} from 'rxjs/operators';
 import { CurrencyConversion } from './currency-conversion';
+import { CurrencyExchange } from './currency-exchange';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,15 @@ import { CurrencyConversion } from './currency-conversion';
 export class ApiServiceService {
 
   constructor(private http: HttpClient) { }
+
+  getConversionRate(): Observable<CurrencyExchange[]> {
+    const url = `http://localhost:8765/currency-exchange/all`;
+    return this.http.get<CurrencyExchange[]>(url).pipe(
+      retry(5),
+      catchError(this.handleError)
+    );
+
+  }
 
   getCalculateAmount(from: string, to: string, amount: number): Observable<CurrencyConversion> {
     const url = `http://localhost:8765/currency-conversion/from/${from}/to/${to}/quantity/${amount}`;
