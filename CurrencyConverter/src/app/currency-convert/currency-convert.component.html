@@ -30,10 +30,10 @@
                     </div> -->
                 </div>
                 <br>
-                <button class="btn btn-primary" type="submit" [disabled]="!inputForm.valid">Submit</button>
+                <button class="btn btn-primary" type="submit" [disabled]="!inputForm.valid">Convert from {{ currencyConversionResult?.from }} to {{currencyConversionResult?.to}}</button>
             </form>
             <div class="container" *ngIf="isButtonClicked">
-                    <h1> Result : <span class="badge rounded-pill bg-success">{{ currencyConversionResult?.id }} </span></h1> 
+                    <h1> Result : <span class="badge rounded-pill bg-success">{{ currencyConversionResult?.totalCalculatedAmount }} </span></h1> 
                     <!--We add ? to make safe navigation, otherwise it will be an asynchronous and undefined is returned at first-->
             </div>
         </div>

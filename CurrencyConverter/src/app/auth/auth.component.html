@@ -1,17 +1,47 @@
-<div class="row">
-    <div class="col-xs-12">
-        <form>
+<!-- <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+        <form #authForm="ngForm" (ngSubmit)="onLogin(authForm)">
             <div class="form-group">
-                <label for="Email">Email</label>
-                <input type="email" class="form-control" id="email">
+                <label for="username">Username</label>
+                <input type="text" id="username" class="form-control"
+                ngModel name="username" required>
             </div>
             <div class="form-group">
-                <label for="passoword">Password</label>
-                <input type="password" class="form-control" id="password">
+                <label for="password">Password</label>
+                <input type="password" id="password" class="form-control"
+                ngModel name="password" required minlength="6">
             </div>
+            <div *ngIf="(authForm.value.username != username || authForm.value.password != password) && authForm.touched" style="color: red;">Incorrect username / password</div>
             <div>
-                <button type="submit"></button>
+                <button class="btn btn-primary" type="submit" [disabled]="!authForm.valid">
+                    Login
+                    </button>
             </div>
         </form>
     </div>
-</div>
+</div> -->
+
+<!-- https://bootsnipp.com/snippets/dldxB -->
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <div class="fadeIn first">
+        <img src="https://img.icons8.com/pastel-glyph/64/000000/coin-wallet--v1.png" id="icon">
+      </div>
+  
+      <form #authForm="ngForm" (ngSubmit)="onLogin(authForm)">
+        <input type="text" id="username" class="fadeIn second form-control" name="username" placeholder="Login"
+        ngModel required>
+        <input type="password" id="password" class="fadeIn third form-control" name="password" placeholder="Password" ngModel
+        required minlength="6">
+        <!-- <div *ngIf="(authForm.value.username != username && (authForm.dirty))" style="color: red;">
+            Incorrect username</div>
+            <div *ngIf="(authForm.value.username != null && (authForm.value.password != password && (authForm.dirty)))" style="color: red;">
+                Incorrect password</div> -->
+        <input type="submit" class="fadeIn fourth" value="Log In" [disabled]="!authForm.valid">
+      </form>
+  
+    </div>
+  </div>
