@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { Observable } from 'rxjs';
+import { AuthResponseData, AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-auth',
@@ -10,9 +11,14 @@ import { AuthService } from '../auth.service';
 })
 export class AuthComponent implements OnInit {
 
-  username = 'admin';
-  password = 'password';
-  error = 'Username / Password';
+  isLoginMode = false;
+
+  isLoading = false;
+
+  error: string = '';
+  onSwitchMode() {
+    this.isLoginMode = !this.isLoginMode;
+  }
 
   constructor(private authService : AuthService, private router: Router) { }
 
@@ -20,15 +26,33 @@ export class AuthComponent implements OnInit {
   }
 
   onLogin(form: NgForm) {
-    if (!form.valid)
+    if (!form.valid){
       return;
-    const formUsername = form.value.username;
-    const formPassword = form.value.password;
-    if (formUsername === this.username && formPassword === this.password) {
-      this.authService.login();
-      this.router.navigate(['currency']);
+    }
+    const email = form.value.email;
+    const password = form.value.password;
+
+    let authObs: Observable<AuthResponseData>;
+
+    this.isLoading = true;
+    if (this.isLoginMode) {
+      authObs = this.authService.login(email, password);
+    }
+    else {
+      authObs = this.authService.signup(email, password);
+      form.reset();
     }
 
+    authObs.subscribe(
+      resData => {
+        console.log(resData);
+        this.isLoading = false;
+      }, errorMessage => {
+        console.log(errorMessage);
+        this.error = errorMessage;
+        this.isLoading = false;
+      }
+    );
   }
 
 }

@@ -1,13 +1,36 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Currency Conversion</a>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="navbar-header">
+        <a class="navbar-brand" routerLink="/">Currency Conversion</a>
+      </div>
+      <div class="collapse navbar-collapse">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <button class="btn btn-outline-dark">Dark Mode</button>
         </ul>
-        <form class="d-flex">
+        <ul class="nav navbar-nav navbar-right">
+          <li routerLinkActive="active"><a routerLink="/auth">Authenticate</a></li>
+        </ul>
+        <!-- <form class="d-flex">
+          <button class="btn btn-outline-success" type="submit"><a routerLink="/login"></a>Authenticate</button>
           <button class="btn btn-outline-success" type="button">{{helperFunctionSignInSignOut()}}</button>
-        </form>
+        </form> -->
       </div>
     </div>
   </nav>
+
+
+
+  <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" href="#">Features</a>
+        <a class="nav-item nav-link" href="#">Pricing</a>
+        <a class="nav-item nav-link disabled" href="#">Disabled</a>
+      </div>
+    </div>
+  </nav> -->

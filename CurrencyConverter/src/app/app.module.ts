@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CurrencyExchangeRateComponent } from './currency-exchange-rate/currency-exchange-rate.component';
 import { AuthComponent } from './auth/auth.component';
 import { RouterModule } from '@angular/router';
+import { LoadingSpinnerComponent } from './shared/loading-spinner/loading-spinner.component';
+
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { RouterModule } from '@angular/router';
     NavBarComponent,
     CurrencyConvertComponent,
     CurrencyExchangeRateComponent,
-    AuthComponent
+    AuthComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,

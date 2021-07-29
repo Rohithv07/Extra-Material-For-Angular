@@ -14,26 +14,4 @@ export class NavBarComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  loginOrLogout: string = '';
-  helperFunctionSignInSignOut() : string {
-    if (this.authService.isLoggedIn()) {
-      this.loginOrLogout = 'Logout';
-    }
-    else {
-      this.loginOrLogout = 'Login'
-    }
-    //this.router.navigate(['login'])
-    return this.loginOrLogout;
-  }
-
-  // clickSignInSignOut() {
-  //   this.router.navigate(['login'])
-  //   if (this.authService.isLoggedIn()) {
-  //     this.loginOrLogout = 'Login';
-  //   }
-  //   else {
-  //     this.loginOrLogout = 'Logout'
-  //   }
-  // }
-
 }
