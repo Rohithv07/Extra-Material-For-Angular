@@ -1,7 +1,9 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { Router } from '@angular/router';
+import { Subject, throwError } from 'rxjs';
+import { catchError, tap } from 'rxjs/operators';
+import { User } from './auth/user.model';
 
 export interface AuthResponseData {
   kind: string,
@@ -18,30 +20,65 @@ export interface AuthResponseData {
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) { }
+  user = new Subject<User>();
+
+  constructor(private http: HttpClient, private router: Router) { }
 
   signup(email: string, password: string) {
     return this.http.post<AuthResponseData>(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=apikey',
+      'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=key',
     {
       email: email,
       password: password,
       returnSecureToken: true
     }
-    ).pipe(catchError(this.handleError));
+    ).pipe(catchError(this.handleError),
+    tap(resData => {
+      this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn);
+    }));
   }
-
-  loggedIn: boolean = false;
 
   login(email: string, password: string) {
     return this.http.post<AuthResponseData>(
-      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=apikey',
+      'https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=key',
       {
         email: email,
         password: password,
         returnSecureToken: true
       }
-    ).pipe(catchError(this.handleError));
+    ).pipe(catchError(this.handleError),
+    tap(resData => {
+      this.handleAuthentication(resData.email, resData.localId, resData.idToken, +resData.expiresIn);
+    }));
+  }
+
+  logout() {
+    this.user.next(undefined);
+    this.router.navigate(['/auth']);
+  }
+
+  // refresh and stays logged in
+  autologin() {
+    const userData: {
+      email: string;
+      id: string;
+      _token: string;
+      _tokenExpirationDate: string;
+    } = JSON.parse(localStorage.getItem('userData') || '{}');
+    if (!userData)
+      return;
+    const loadedUser = new User(userData.email, userData.id, userData._token, new Date(userData._tokenExpirationDate));
+    if (loadedUser.token) {
+      this.user.next(loadedUser);
+    }
+    
+  }
+
+  private handleAuthentication(email: string, userId: string, token: string, expiresIn: number) {
+    const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
+      const user = new User(email, userId, token, expirationDate);
+      this.user.next(user);
+      localStorage.setItem('userData', JSON.stringify(user));
   }
 
   private handleError(errorRes: HttpErrorResponse) {
@@ -66,13 +103,5 @@ export class AuthService {
       return throwError(errorMessage);
     }
   }
-
-  // logout() {
-  //   this.loggedIn = false;
-  // }
-
-  // isLoggedIn(): boolean {
-  //   return this.loggedIn;
-  // }
 
   

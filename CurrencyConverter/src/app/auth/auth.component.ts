@@ -40,19 +40,22 @@ export class AuthComponent implements OnInit {
     }
     else {
       authObs = this.authService.signup(email, password);
-      form.reset();
     }
 
     authObs.subscribe(
       resData => {
         console.log(resData);
         this.isLoading = false;
+        this.router.navigate([
+          '/currency'
+        ])
       }, errorMessage => {
         console.log(errorMessage);
         this.error = errorMessage;
         this.isLoading = false;
       }
     );
+    form.reset();
   }
 
 }

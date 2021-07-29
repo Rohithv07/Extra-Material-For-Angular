@@ -16,12 +16,8 @@
         ngModel required email>
         <input type="password" id="password" class="fadeIn third form-control" name="password" placeholder="Password" ngModel
         required minlength="6">
-        <!-- <div *ngIf="(authForm.value.username != username && (authForm.dirty))" style="color: red;">
-            Incorrect username</div>
-            <div *ngIf="(authForm.value.username != null && (authForm.value.password != password && (authForm.dirty)))" style="color: red;">
-                Incorrect password</div> -->
         <button type="submit" class="fadeIn fourth" value="Log In" [disabled]="!authForm.valid">{{ isLoginMode ? 'Login' : 'Signup'}}</button>
-        <button type="button" class="fadeIn fourth" value="switch"(click) = "onSwitchMode()">Switch to {{ isLoginMode ? 'Signup' : 'Login'}}</button>
+        <button type="button" class="fadeIn fourth" value="switch" (click) = "onSwitchMode()">Switch to {{ isLoginMode ? 'Signup' : 'Login'}}</button>
       </form>
   
     </div>
