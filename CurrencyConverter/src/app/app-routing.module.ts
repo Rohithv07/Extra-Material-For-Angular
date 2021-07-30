@@ -6,8 +6,9 @@ import { CurrencyConvertComponent } from './currency-convert/currency-convert.co
 
 const routes: Routes = [
   { path: '', redirectTo: '/auth', pathMatch: 'full'},
-  { path: 'currency', component: CurrencyConvertComponent},
-  { path: 'auth', component: AuthComponent}
+  { path: 'currency', component: CurrencyConvertComponent, canActivate: [AuthGuard]},
+  { path: 'auth', component: AuthComponent},
+  { path: '**', redirectTo: '/auth'}
 ];
 
 @NgModule({

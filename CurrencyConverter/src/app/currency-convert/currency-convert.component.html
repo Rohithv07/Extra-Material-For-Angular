@@ -3,7 +3,7 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-            <form [formGroup]="inputForm" (ngSubmit)="onSubmit()" novalidate>
+            <form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <label for="currencyFrom">Currency From</label>
                     <select name="currencyfrom" id="currencyfrom" class="form-control" formControlName="currencyConvertedFrom">
