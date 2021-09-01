@@ -1,0 +1,26 @@
+<div class="container">
+    <h1 class="display-2">Employee Details</h1>
+    <ul class="list-group">
+    <li class="list-group-item"><b>ID : </b> {{ employee.id }}</li>
+    <li class="list-group-item"><b>Name : </b> {{ employee.name }}</li>
+    <li class="list-group-item"><b>Salary : </b> {{ employee.salary | currency: 'INR'}}</li>
+    <li class="list-group-item" *ngIf="employee.department"><b>Permanent : </b> {{ employee.permanent }}</li>
+    <li class="list-group-item"><b>Department Id : </b> {{ employee.department.id }}</li>
+    <li class="list-group-item"><b>Department Name : </b> {{ employee.department.name }}</li>
+    <table class="table-primary">
+      <thead>
+        <tr>
+          <th scope="col">Skill Id</th>
+          <th scope="col">Skill Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let skill of employee.skills">
+          <th scope="row">{{ skill.id }}</th>
+          <td>{{ skill.name }}</td>
+        </tr>
+      </tbody>
+    </table>
+    <li class="list-group-item"><b>Date of Birth : </b> {{ employee.dob | date: 'MMM d, y'}}</li>
+    </ul>
+  </div>
