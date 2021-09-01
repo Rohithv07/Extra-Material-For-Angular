@@ -7,6 +7,7 @@ import { ViewEmpComponent } from './view-emp/view-emp.component';
 import { EditEmpComponent } from './edit-emp/edit-emp.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { QuantityIncrementComponent } from './quantity-increment/quantity-increment.component';
+import { EditEmpTemplateDrivenComponent } from './edit-emp-template-driven/edit-emp-template-driven.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { QuantityIncrementComponent } from './quantity-increment/quantity-increm
     ViewEmpComponent,
     EditEmpComponent,
     NavbarComponent,
-    QuantityIncrementComponent
+    QuantityIncrementComponent,
+    EditEmpTemplateDrivenComponent
   ],
   imports: [
     BrowserModule,

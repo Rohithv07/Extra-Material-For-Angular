@@ -1,1 +1,33 @@
-<p>quantity-increment works!</p>
+<div class="container-fluid">
+    Simple Button click event!! </div>
+<div class="container-fluid">
+    <button type="button" (click)="onButtonClick()"> Click me </button>
+    <div *ngIf="isButtonIsClicked">Click me button clicked!!</div>
+</div>
+
+<div class="container-fluid">
+    Model Binding
+</div>
+
+<div class="container-fluid">
+    <span>
+        <input type="text" name="counter" id="counter" value="{{this.counterValue}}"> 
+        <button type="button" (click)="onIncrement()" data-field="counter">Add</button>
+    </span>
+</div>
+
+<div class="container-fluid">
+    <h2>Quantity Selector</h2>
+    <div class="input-group">
+        <span class="btn-group">
+            <button class = "btn btn-danger" type="button" (click)="onDecrementQuantitySelector()" [disabled]="counter <= 0" data-field="inputCounter">
+                -
+            </button>
+            <input type="text" name="inputCounter" id="inputCounter" class="form-control input-number" value={{this.counter}}>
+            <button class = "btn btn-success" type="button" (click)="onIncrementQuantitySelector()" data-field="inputCounter">
+                +
+            </button>
+        </span>
+    </div>
+    
+</div>
