@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,6 +9,7 @@ import { EditEmpComponent } from './edit-emp/edit-emp.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { QuantityIncrementComponent } from './quantity-increment/quantity-increment.component';
 import { EditEmpTemplateDrivenComponent } from './edit-emp-template-driven/edit-emp-template-driven.component';
+import { EditEmpReactiveComponent } from './edit-emp-reactive/edit-emp-reactive.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,14 @@ import { EditEmpTemplateDrivenComponent } from './edit-emp-template-driven/edit-
     EditEmpComponent,
     NavbarComponent,
     QuantityIncrementComponent,
-    EditEmpTemplateDrivenComponent
+    EditEmpTemplateDrivenComponent,
+    EditEmpReactiveComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

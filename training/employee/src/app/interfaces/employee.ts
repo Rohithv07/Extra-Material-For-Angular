@@ -6,7 +6,7 @@ export interface Employee {
     name: string,
     salary: number,
     permanent: boolean,
-    department: Department,
+    department: Department[],
     skills: Skill[],
     dob: Date
 };

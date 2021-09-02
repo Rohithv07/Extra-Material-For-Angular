@@ -5,8 +5,8 @@
     <li class="list-group-item"><b>Name : </b> {{ employee.name }}</li>
     <li class="list-group-item"><b>Salary : </b> {{ employee.salary | currency: 'INR'}}</li>
     <li class="list-group-item" *ngIf="employee.department"><b>Permanent : </b> {{ employee.permanent }}</li>
-    <li class="list-group-item"><b>Department Id : </b> {{ employee.department.id }}</li>
-    <li class="list-group-item"><b>Department Name : </b> {{ employee.department.name }}</li>
+    <li class="list-group-item"><b>Department Id : </b> {{ employee.department[0].id }}</li>
+    <li class="list-group-item"><b>Department Name : </b> {{ employee.department[0].name }}</li>
     <table class="table-primary">
       <thead>
         <tr>

@@ -1,0 +1,42 @@
+<h2>Edit Employee</h2>
+<form [formGroup]="empForm" (ngSubmit)="onSubmit(empForm.value)">
+    <div class="form-control">
+        <label for="username">Name: </label>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" formControlName="name" id="name">
+        </div>
+        <div *ngIf="!empForm.get('name')?.valid" class="alert alert-danger" role="alert">Name must be atleast 4-20 characters long</div>
+        <label for="salary">Salary: </label>
+        <div class="input-group mb-3">
+            <input type="number" class="form-control" formControlName="salary" id="salary">
+        </div>
+        <div *ngIf="!empForm.get('salary')?.valid" class="alert alert-danger" role="alert">Salary field should not be empty</div>
+        <div class="form-check form-switch">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" formControlName="permanent">
+            <label class="form-check-label" for="flexSwitchCheckDefault">Is Permanent or not?</label>
+        </div>
+        <div class="input-group mb-3">
+            <select formControlName="department" id="department">
+                <!-- <option value="">{{ defaultDepartment }}</option> -->
+                <option *ngFor="let department of employee.department;" [ngValue]="department">
+                  {{ department.name }}
+                </option>
+              </select>
+        </div>
+        
+        <div class="input-group mb-3">
+            <button type="submit" [disabled]="!empForm.valid">Save</button>
+        </div>
+    </div>
+</form>
+
+<div class="block">
+    <strong>Employee Model</strong><br>
+    <pre>{{ employee | json }}</pre>
+</div>
+<div class="block">
+    <strong>Angular Generated Model</strong><br>
+    <pre>{{ empForm.value | json }}</pre>
+</div>
+
+

@@ -13,10 +13,10 @@ export class ViewEmpComponent implements OnInit {
     name: "john",
     salary: 10000,
     permanent: true,
-    department: {
+    department: [{
       id: 1,
       name: "Payroll"
-    },
+    }],
     skills: [
       {
       id: 1,
