@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { QuantityIncrementComponent } from './quantity-increment/quantity-increment.component';
 import { EditEmpTemplateDrivenComponent } from './edit-emp-template-driven/edit-emp-template-driven.component';
 import { EditEmpReactiveComponent } from './edit-emp-reactive/edit-emp-reactive.component';
+import { EditEmpFormBuilderComponent } from './edit-emp-form-builder/edit-emp-form-builder.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { EditEmpReactiveComponent } from './edit-emp-reactive/edit-emp-reactive.
     NavbarComponent,
     QuantityIncrementComponent,
     EditEmpTemplateDrivenComponent,
-    EditEmpReactiveComponent
+    EditEmpReactiveComponent,
+    EditEmpFormBuilderComponent
   ],
   imports: [
     BrowserModule,
