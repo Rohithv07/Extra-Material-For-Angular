@@ -1,0 +1,23 @@
+<div>
+    <h3>Employee List</h3>
+</div>
+<nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+        <button class="btn btn-secondary-outline my-2 my-sm-0" type="submit">Search</button>
+        <input type="search" name="search" placeholder="Find by name" [(ngModel)]="searchKey" autocomplete="off">
+    </form>
+</nav>
+<div *ngFor="let emp of employee | filter: searchKey;let i = index">
+    <div class="col sm-6">
+        <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+            <div class="card-header">
+                <a routerLink="/employee-info">Employee Info</a>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">{{ emp.name }}</h5>
+                <p class="card-text">{{ emp.salary | currency: 'INR' }}</p>
+                <p><a href="#" class="btn btn-secondary-outline">Edit</a></p>
+            </div>
+        </div>
+    </div>
+</div>
