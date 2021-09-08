@@ -1,0 +1,12 @@
+<div style="margin-top: 30px;">
+    Event: {{ event.name }} 
+</div>
+<div>
+    Date: {{ event.date }}
+</div>
+<div>
+    <img [src]="event.imageUrl" alt="">
+</div>
+<div>
+    Address: <app-address [address]="event.location"></app-address>    
+</div>
