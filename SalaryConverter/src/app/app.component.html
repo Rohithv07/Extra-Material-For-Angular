@@ -1,0 +1,10 @@
+<h2>Salary Converter<h2>
+<div class="layout-row justify-content-center mt-50">
+<app-yen [yenValue]="yenValue" (onYenValueChange)="onYenValueChange($event)"></app-yen>
+<app-usd [usdValue]="usdValue" (onUSDValueChage)="onUSDValueChage($event)"></app-usd>
+<app-cm [cmValue]="cmValue" (onCMValueChange)="onCMValueChange($event)"></app-cm>
+<app-km [kmValue]="kmValue" (onKMValueChange)="onKMValueChange($event)"></app-km>
+<app-metre [mValue]="mValue" (onMValueChange)="onMValueChange($event)"></app-metre>
+<app-kg [kg]="kg" (onKgValueChange)="onKgValueChange($event)"></app-kg>
+<app-g [g]="g" (onGValueChange)="onGValueChange($event)"></app-g>
+</div>
