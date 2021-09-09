@@ -1,0 +1,13 @@
+<div class="layout-row justify-content-center">
+    <div class="card mt-75">
+      <div class="canvas" data-test-id="selectedColor" [style.background-color]="selectedColor">
+        <p class="text-center mx-auto px-5">{{selectedColor}}</p>
+      </div>
+      <div class="card-actions">
+        <div class="layout-row justify-content-center align-items-center" data-test-id="colorPickerOptions">
+          <!--Render the list of colors in the div below-->
+          <div class="color-box mx-8 my-15" *ngFor="let color of colorOptions;" [style.background-color]="color"  [ngClass]="{'selected' : selectedColor === color}" (click)="seleccionarColor(color)">
+        </div>
+      </div>
+    </div>
+  </div>
